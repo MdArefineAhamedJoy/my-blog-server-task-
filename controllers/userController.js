@@ -13,7 +13,7 @@ exports.updateProfile = async (req, res) => {
 
         const [updated] = await User.update(
             { name, phoneNumber, password },
-            { where: { email: findEmail } }
+            { where: { email: email } }
         );
 
         if (updated) {
