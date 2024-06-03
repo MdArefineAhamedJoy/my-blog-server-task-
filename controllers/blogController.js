@@ -19,6 +19,21 @@ exports.getBlogs = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+exports.getUserBlog = async (req, res) => {
+    const { email } = req.query;
+    console.log(email, '...............................')
+    try {
+
+        const blogs = await Blog.findAll({ where: { email } });
+        console.log(blogs)
+        res.status(200).json(blogs);
+
+
+    } catch (error) {
+        console.error('Error fetching user Blog:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+}
 
 exports.getBlogById = async (req, res) => {
     try {

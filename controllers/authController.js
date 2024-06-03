@@ -16,7 +16,7 @@ exports.register = async (req, res) => {
             phoneNumber,
             password: hashedPassword,
         });
-        res.status(201).json(user);
+        res.status(201).json(users);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
