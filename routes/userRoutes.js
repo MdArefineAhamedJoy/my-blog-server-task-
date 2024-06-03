@@ -6,4 +6,5 @@ const router = express.Router();
 router.get('/profile', getUserProfile);
 router.put('/profile/:email', updateProfile);
 
+
 module.exports = router;
